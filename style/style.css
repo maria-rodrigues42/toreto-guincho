@@ -246,11 +246,11 @@ h2::after {
 .carousel-container {
     position: relative;
     max-width: 900px;
-    height: 70vh;
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: #000;
 }
 
 .carousel-slide {
@@ -258,8 +258,12 @@ h2::after {
 }
 
 .carousel-slide img {
-    width: 50vw;
-
+    width: 100%;
+    height: auto;
+    max-height: 500px; /* Limita a altura máxima da imagem */
+    object-fit: contain; /* Faz a imagem caber sem cortar, mantendo a proporção */
+    display: block;
+    margin: 0 auto;
 }
 
 .fade {
@@ -276,9 +280,9 @@ h2::after {
     cursor: pointer;
     position: absolute;
     top: 50%;
+    transform: translateY(-50%);
     width: auto;
     padding: 16px;
-    margin-top: -22px;
     color: white;
     font-weight: bold;
     font-size: 20px;
@@ -288,13 +292,13 @@ h2::after {
     background-color: rgba(0,0,0,0.4);
 }
 
+.prev {
+    left: 0;
+}
+
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
-}
-
-.prev{
-    left: 0;
 }
 
 .prev:hover, .next:hover {
@@ -338,7 +342,6 @@ h2::after {
 .active-dot, .dot:hover {
     background-color: var(--cor-vermelho);
 }
-
 /* --- SEÇÃO DE DEPOIMENTOS --- */
 .depoimentos-grid {
     display: grid;
@@ -482,4 +485,7 @@ footer .slogan {
     .call-button-mobile {
         display: inline-flex; /* Mostra o botão no celular */
     }
+    .carousel-text h3, .carousel-text p {
+    visibility: hidden;
+}
 }

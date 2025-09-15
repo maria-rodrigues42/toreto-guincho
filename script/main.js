@@ -67,4 +67,4 @@ document.addEventListener("DOMContentLoaded", function() {
     // Inicia o observador da animação de scroll
     window.addEventListener('scroll', reveal);
     reveal(); // Chama uma vez para verificar se alguma seção já está visível
-}); 
+});
